@@ -1,0 +1,33 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.hero-bg {
+  background-color: #0A1A44;
+  background-image: radial-gradient(circle at top right, rgba(240, 199, 94, 0.05), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(69, 25, 179, 0.1), transparent 50%);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 1rem;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu-link:hover {
+  background-color: rgba(240, 199, 94, 0.1);
+}
+
+body {
+  font-family: "Inter", "Noto Sans", sans-serif;
+}

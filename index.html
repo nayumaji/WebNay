@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kittisak Umaji</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#4519b3",
+          "background-light": "#f6f6f8",
+          "background-dark": "#161121",
+          "text-primary-light": "#2D3748",
+          "text-primary-dark": "#E2E8F0",
+          "accent": "#F0C75E",
+        },
+        fontFamily: {
+          "display": ["Inter", "sans-serif"]
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+      },
+    },
+  }
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+  
+  <!-- TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="size-6 text-[#F0C75E]">
+          <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-800 dark:text-gray-100">Kittisak Umaji</h2>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors hover:text-primary dark:hover:text-[#F0C75E]">About</a>
+        <a href="#experience" class="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors hover:text-primary dark:hover:text-[#F0C75E]">Experience</a>
+        <a href="#skills" class="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors hover:text-primary dark:hover:text-[#F0C75E]">Skills</a>
+        <a href="#projects" class="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors hover:text-primary dark:hover:text-[#F0C75E]">Projects</a>
+        <a href="#achievements" class="text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors hover:text-primary dark:hover:text-[#F0C75E]">Achievements</a>
+        <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+          <span class="material-symbols-outlined text-sm">dark_mode</span>
+        </button>
+        <a href="mailto:nayumaji@hotmail.com" class="no-underline">
+        <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all hover:bg-[#F0C75E] hover:text-[#0A1A44]">
+          <span class="truncate">Contact Me</span>
+        </button>
+        </a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center gap-3">
+        <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+          <span class="material-symbols-outlined text-sm">dark_mode</span>
+        </button>
+        <button id="mobile-menu-button" class="p-2 rounded-md text-gray-700 dark:text-gray-200">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu flex-col absolute top-full left-0 right-0 bg-background-light dark:bg-background-dark shadow-lg md:hidden">
+      <a href="#about" class="mobile-menu-link">About</a>
+      <a href="#experience" class="mobile-menu-link">Experience</a>
+      <a href="#skills" class="mobile-menu-link">Skills</a>
+      <a href="#projects" class="mobile-menu-link">Projects</a>
+      <a href="#achievements" class="mobile-menu-link">Achievements</a>
+      <a href="mailto:nayumaji@hotmail.com" class="mobile-menu-link">Contact Me</a>
+    </div>
+  </header>
+  
+  <!-- HeroSection -->
+  <main class="flex-grow pt-16">
+    <section id="hero" class="hero-bg flex min-h-screen w-full items-center justify-center px-4 py-20">
+      <div class="mx-auto w-full max-w-4xl text-center">
+        <div class="flex flex-col items-center gap-6">
+          <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-white/30">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHHe7aNe2RxIg/profile-displayphoto-shrink_800_800/B56ZkjB6W6KIAc-/0/1757229329068?e=1766620800&v=beta&t=FUwEje05csGfG2eZX0ImrujysV5q2B6DXcEui2JtumE"
+                 alt="Profile Picture"
+                 class="w-full h-full object-cover">
+          </div>
+          <h1 class="text-4xl font-black leading-tight tracking-tighter text-[#F5F5F5] md:text-6xl lg:text-7xl">
+            Kittisak Umaji
+          </h1>
+          <p class="mx-auto max-w-3xl text-lg font-normal leading-normal text-gray-300 md:text-xl">
+            A passionate professional with expertise in digital transformation, agile methodologies, and team leadership.
+          </p>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="test_cv.pdf" target="_blank" class="no-underline">
+          <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#F0C75E] text-[#0A1A44] text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105">
+            <span class="truncate">View Resume (PDF)</span>
+          </button>
+          </a>
+          <a href="mailto:nayumaji@hotmail.com" class="no-underline">
+          <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 border-2 border-gray-400 text-gray-100 text-base font-bold leading-normal tracking-[0.015em] transition-all duration-200 hover:border-white hover:bg-white/10 hover:scale-105">
+            <span class="truncate">Contact Me</span>
+          </button>
+          </a>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <span class="material-symbols-outlined text-4xl text-gray-400">expand_more</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 py-12">
+          <!-- Left Column: Image -->
+          <div class="flex items-start justify-center md:col-span-1">
+            <div class="w-full max-w-xs md:max-w-none">
+              <div class="w-full overflow-hidden rounded-xl bg-center bg-no-repeat bg-cover aspect-square"
+                   style='background-image: url("https://media.licdn.com/dms/image/v2/D5603AQHHe7aNe2RxIg/profile-displayphoto-shrink_800_800/B56ZkjB6W6KIAc-/0/1757229329068?e=1766620800&v=beta&t=FUwEje05csGfG2eZX0ImrujysV5q2B6DXcEui2JtumE");'
+                   alt="Professional headshot">
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Text Content -->
+          <div class="md:col-span-2">
+            <!-- SectionHeader: About Me -->
+            <h2 class="text-[#2D3748] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-4">About Me</h2>
+            <!-- BodyText 1 -->
+            <p class="text-[#2D3748] dark:text-[#E2E8F0] text-base font-normal leading-relaxed mb-4">
+              A passionate and results-driven professional with over a decade of experience in guiding organizations through complex digital transformations. My core philosophy is rooted in building high-performing, self-organizing teams that are empowered to deliver exceptional value to customers. I thrive on fostering a culture of continuous improvement, transparency, and collaboration.
+            </p>
+            <!-- BodyText 2 -->
+            <p class="text-[#2D3748] dark:text-[#E2E8F0] text-base font-normal leading-relaxed mb-8">
+              My journey has taken me through various industries, from nimble startups to large-scale enterprises, where I've successfully implemented Scrum, Kanban, and other frameworks. I specialize in stakeholder management, removing impediments, and mentoring teams to reach their full potential, ensuring projects are not only delivered on time and within budget but also exceed expectations.
+            </p>
+            <!-- SectionHeader: Key Strengths -->
+            <h3 class="text-[#2D3748] dark:text-white text-xl font-bold leading-tight tracking-tight mb-4">Key Strengths</h3>
+            <!-- Strengths Pills -->
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-[#2D3748] dark:text-white">Digital Transformation</span>
+              <span class="rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-[#2D3748] dark:text-white">Team Leadership</span>
+              <span class="rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-[#2D3748] dark:text-white">Stakeholder Management</span>
+              <span class="rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-[#2D3748] dark:text-white">Mentorship</span>
+              <span class="rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium text-[#2D3748] dark:text-white">Continuous Improvement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[#2D3748] dark:text-white">Professional Experience</h2>
+        <div class="space-y-12">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-[#2D3748] dark:text-white">Senior Project Manager</h3>
+              <span class="text-primary dark:text-[#F0C75E] font-medium">Tech Solutions Inc. | 2020 - Present</span>
+            </div>
+            <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+              Led cross-functional teams in delivering complex software projects, resulting in 25% improvement in delivery timelines and increased customer satisfaction.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-[#2D3748]/70 dark:text-[#E2E8F0]/70">
+              <li>Managed projects worth $2M+ with teams of 15+ members</li>
+              <li>Implemented agile methodologies across 5 product teams</li>
+              <li>Improved development efficiency by 30% through process optimization</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-[#2D3748] dark:text-white">Agile Coach</h3>
+              <span class="text-primary dark:text-[#F0C75E] font-medium">Digital Innovations | 2017 - 2020</span>
+            </div>
+            <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+              Guided organizations through agile transformations, establishing frameworks that improved productivity and team collaboration.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-[#2D3748]/70 dark:text-[#E2E8F0]/70">
+              <li>Coached 20+ scrum masters and product owners</li>
+              <li>Facilitated SAFe implementations for 3 large enterprises</li>
+              <li>Reduced time-to-market by 40% for multiple client products</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 class="text-xl font-bold text-[#2D3748] dark:text-white">Software Developer</h3>
+              <span class="text-primary dark:text-[#F0C75E] font-medium">StartUp Ventures | 2015 - 2017</span>
+            </div>
+            <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+              Developed and maintained full-stack applications, contributing to product growth and technical architecture.
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-[#2D3748]/70 dark:text-[#E2E8F0]/70">
+              <li>Developed 3 major product features used by 100k+ users</li>
+              <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+              <li>Mentored junior developers and interns</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-wrap justify-between gap-4 p-4 items-center mb-12">
+          <div class="flex min-w-72 flex-col gap-3">
+            <h2 class="text-[#211d11] dark:text-background-light text-4xl font-black leading-tight tracking-tighter">Skills & Expertise</h2>
+            <p class="text-[#211d11]/60 dark:text-background-light/60 text-base font-normal leading-normal">
+              A comprehensive overview of my professional capabilities, tools proficiency, and expertise.
+            </p>
+          </div>
+        </div>
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+          <!-- Core Skills Section -->
+          <div class="flex flex-col gap-4">
+            <h3 class="text-[#211d11] dark:text-background-light text-lg font-bold leading-tight tracking-tight px-1">Core Skills</h3>
+            <div class="flex gap-2 flex-wrap">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Project Management</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Agile Methodologies</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Scrum</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Kanban</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Team Leadership</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Stakeholder Management</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Process Improvement</p>
+              </div>
+            </div>
+          </div>
+          <!-- Tools Section -->
+          <div class="flex flex-col gap-4">
+            <h3 class="text-[#211d11] dark:text-background-light text-lg font-bold leading-tight tracking-tight px-1">Tools</h3>
+            <div class="flex gap-2 flex-wrap">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Jira</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Confluence</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Trello</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Asana</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Miro</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Azure DevOps</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Slack</p>
+              </div>
+            </div>
+          </div>
+          <!-- Certifications Section -->
+          <div class="flex flex-col gap-4">
+            <h3 class="text-[#211d11] dark:text-background-light text-lg font-bold leading-tight tracking-tight px-1">Certifications</h3>
+            <div class="flex gap-2 flex-wrap">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Certified ScrumMaster (CSM)</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">SAFe Agilist (SA)</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">Project Management Professional (PMP)</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-3 hover:bg-primary/40 transition-colors duration-200">
+                <p class="text-[#211d11] dark:text-background-light text-sm font-medium leading-normal">AWS Cloud Practitioner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Key Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[#2D3748] dark:text-white">Key Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="E-commerce Platform" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-[#2D3748] dark:text-white">E-commerce Platform</h3>
+              <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+                Led development of a scalable e-commerce platform serving 100k+ users with 99.9% uptime.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Agile</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Scrum</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Team Leadership</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Digital Transformation" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-[#2D3748] dark:text-white">Digital Transformation</h3>
+              <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+                Guided enterprise client through digital transformation, improving efficiency by 40%.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Consulting</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Change Management</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Process Improvement</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Product Development" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-[#2D3748] dark:text-white">Product Development</h3>
+              <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70 mb-4">
+                Delivered innovative SaaS product that increased client revenue by 25% in first year.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Product Management</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Lean</span>
+                <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Kanban</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[#2D3748] dark:text-white">Achievements & Recognition</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-primary dark:text-[#F0C75E] mb-2">10+</div>
+            <p class="text-[#2D3748] dark:text-[#E2E8F0]">Years Experience</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-primary dark:text-[#F0C75E] mb-2">50+</div>
+            <p class="text-[#2D3748] dark:text-[#E2E8F0]">Projects Completed</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-primary dark:text-[#F0C75E] mb-2">25+</div>
+            <p class="text-[#2D3748] dark:text-[#E2E8F0]">Team Members Mentored</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-primary dark:text-[#F0C75E] mb-2">15%</div>
+            <p class="text-[#2D3748] dark:text-[#E2E8F0]">Average Efficiency Gain</p>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold mb-6 text-center text-[#2D3748] dark:text-white">Awards & Recognition</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <div class="bg-primary/10 p-3 rounded-full text-primary dark:text-[#F0C75E]">
+                <span class="material-symbols-outlined">emoji_events</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#2D3748] dark:text-white">Outstanding Leadership Award</h4>
+                <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70">Tech Solutions Inc. | 2022</p>
+                <p class="mt-2 text-[#2D3748]/70 dark:text-[#E2E8F0]/70">
+                  Recognized for leading the company's most successful product launch in company history.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+              <div class="bg-primary/10 p-3 rounded-full text-primary dark:text-[#F0C75E]">
+                <span class="material-symbols-outlined">emoji_events</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#2D3748] dark:text-white">Innovation Excellence Award</h4>
+                <p class="text-[#2D3748]/70 dark:text-[#E2E8F0]/70">Digital Innovations | 2020</p>
+                <p class="mt-2 text-[#2D3748]/70 dark:text-[#E2E8F0]/70">
+                  Awarded for implementing agile methodologies that reduced project delivery time by 40%.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-800 text-white">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h3 class="text-xl font-bold mb-4">Get In Touch</h3>
+        <p class="mb-6 max-w-2xl mx-auto">I'm currently available for freelance work and full-time opportunities. Feel free to reach out if you'd like to collaborate.</p>
+        <div class="flex justify-center gap-6 mb-8">
+          <a href="#" class="text-2xl hover:text-[#F0C75E] transition-colors">
+            <span class="material-symbols-outlined">mail</span>
+          </a>
+          <a href="#" class="text-2xl hover:text-[#F0C75E] transition-colors">
+            <span class="material-symbols-outlined">link</span>
+          </a>
+          <a href="#" class="text-2xl hover:text-[#F0C75E] transition-colors">
+            <span class="material-symbols-outlined">code</span>
+          </a>
+          <a href="#" class="text-2xl hover:text-[#F0C75E] transition-colors">
+            <span class="material-symbols-outlined">person</span>
+          </a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2023 My Personal Portfolio. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
